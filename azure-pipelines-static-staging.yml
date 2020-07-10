@@ -18,6 +18,17 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
+- task: shellexec@0
+  inputs:
+    code: |
+      git checkout qa
+      
+      git pull https://$(gitusername):$(gitpassword)@github.com/rameshbalidi/static dev
+      
+      git merge dev
+      
+      git push https://$(gitusername):$(gitpassword)@github.com/rameshbalidi/static qa
+
 - task: SSH@0
   inputs:
     sshEndpoint: 'ssh-static-stage'
