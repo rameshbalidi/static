@@ -22,11 +22,11 @@ steps:
     code: |
       git checkout master
       
-      git pull https://$(gitusername):$(gitpassword)@github.com/rameshbalidi/wordpress qa
+      git pull https://$(gitusername):$(gitpassword)@github.com/rameshbalidi/static qa
       
       git merge qa
       
-      git push https://$(gitusername):$(gitpassword)@github.com/rameshbalidi/wordpress master
+      git push https://$(gitusername):$(gitpassword)@github.com/rameshbalidi/static master
 
 - task: SSH@0
   inputs:
